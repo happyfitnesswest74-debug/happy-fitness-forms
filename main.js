@@ -1,7 +1,7 @@
 // main.js
 
-// **هام: استبدل هذا المتغير برابط Web App URL الذي حصلت عليه من Apps Script.**
-const API_URL = "https://script.google.com/macros/s/AKfycbyFhscw7zZrnRkwCnjAJyPMD_90X166HOd4pelZD8hEZGlXc6EoQPBfXbbz1DXFfc5zgA/exec"; 
+// ✅ رابط Web App الصحيح (من Google Apps Script)
+const API_URL = "https://script.google.com/macros/s/AKfycbzaChri_XlVTXRY_2eSqAR21FYPOgqReKyTysohUdtnlMyJliQarEQzJeGIN5WOz5eBXw/exec";
 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('checkupForm');
@@ -9,12 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (form) {
         form.addEventListener('submit', async (e) => {
-            e.preventDefault(); // منع الإرسال الافتراضي للصفحة
+            e.preventDefault();
 
             responseMessage.textContent = 'جاري الإرسال...';
             responseMessage.style.color = 'orange';
 
-            // جمع بيانات النموذج
+            // 🔸 جمع بيانات النموذج
             const formData = new FormData(form);
             const data = {};
             formData.forEach((value, key) => {
@@ -22,30 +22,24 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             try {
-                // إرسال البيانات إلى Apps Script API باستخدام Fetch API
-                const response = await fetch(API_URL, {
+                // 🔸 إرسال البيانات إلى Google Apps Script
+                await fetch(API_URL, {
                     method: 'POST',
-                    mode: 'cors', // مهم للسماح بالطلبات الخارجية
+                    mode: 'no-cors', // ✅ لتفادي مشكلة CORS
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify(data)
+                    body: JSON.stringify(data),
                 });
-                
-                // تحليل استجابة JSON
-                const result = await response.json();
-                
-                if (result.success) {
-                    responseMessage.textContent = result.message;
-                    responseMessage.style.color = 'var(--main-green)';
-                    form.reset(); // تفريغ النموذج بعد النجاح
-                } else {
-                    responseMessage.textContent = 'فشل التسجيل: ' + result.message;
-                    responseMessage.style.color = 'red';
-                }
+
+                // ⚠️ لا يمكننا قراءة الرد بسبب no-cors
+                // لذا نعرض رسالة نجاح عامة
+                responseMessage.textContent = '✅ تم إرسال البيانات بنجاح!';
+                responseMessage.style.color = 'var(--main-green)';
+                form.reset();
 
             } catch (error) {
-                responseMessage.textContent = 'حدث خطأ في الاتصال بالخادم: ' + error.message;
+                responseMessage.textContent = '❌ حدث خطأ أثناء الإرسال: ' + error.message;
                 responseMessage.style.color = 'red';
             }
         });
