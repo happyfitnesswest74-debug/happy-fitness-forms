@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل فحص - الرشاقة السعيدة</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" style="float: left;" class="btn btn-secondary">
+                <i class="fas fa-home"></i> العودة للرئيسية
+            </a>
+            <h1>نموذج تسجيل فحص جديد</h1>
+        </div>
+
+        <form id="checkupForm">
+            
+            <fieldset>
+                <legend style="color: var(--main-blue); font-weight: bold;">معلومات العميل</legend>
+                <div class="form-group">
+                    <label for="client_name">اسم العميل (مطلوب)</label>
+                    <input type="text" id="client_name" name="client_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="client_mobile">رقم الجوال</label>
+                    <input type="number" id="client_mobile" name="client_mobile">
+                </div>
+                <div class="form-group">
+                    <label for="client_city">المدينة</label>
+                    <input type="text" id="client_city" name="client_city">
+                </div>
+                <div class="form-group">
+                    <label for="client_branch">الفرع</label>
+                    <input type="text" id="client_branch" name="client_branch">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend style="color: var(--main-green); font-weight: bold;">معلومات الفريق</legend>
+                <div class="form-group">
+                    <label for="sales_name">اسم موظف المبيعات</label>
+                    <input type="text" id="sales_name" name="sales_name">
+                </div>
+                <div class="form-group">
+                    <label for="specialist_name">اسم الأخصائي</label>
+                    <input type="text" id="specialist_name" name="specialist_name">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend style="color: var(--main-blue); font-weight: bold;">نتيجة الفحص</legend>
+                
+                <div class="form-group">
+                    <label for="checkup_result">نتيجة الفحص</label>
+                    <select id="checkup_result" name="checkup_result" required>
+                        <option value="">-- اختر النتيجة --</option>
+                        <option value="ناجح (اشتراك)">ناجح (اشتراك)</option>
+                        <option value="تحويل (إلى أخصائي)">تحويل (إلى أخصائي)</option>
+                        <option value="لم يتم">لم يتم</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="checkup_details">التفاصيل (حقول متغيرة حسب النتيجة)</label>
+                    <textarea id="checkup_details" name="checkup_details" rows="4"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">ملاحظات إضافية</label>
+                    <textarea id="notes" name="notes" rows="3"></textarea>
+                </div>
+            </fieldset>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">
+                <i class="fas fa-save"></i> تسجيل الفحص
+            </button>
+            <p id="responseMessage" style="text-align: center; margin-top: 15px; font-weight: bold;"></p>
+
+        </form>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+/* style.css */
+
+:root {
+    --main-blue: #44a7f2;
+    --main-green: #a7d54b;
+    --text-color: #333;
+    --background-color: #f0f2f5;
+    --white-bg: #ffffff;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    direction: rtl; 
+    text-align: right;
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: var(--white-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.header {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 30px;
+}
+.header img {
+    width: 150px;
+    margin-bottom: 10px;
+}
+.header h1 {
+    color: var(--main-blue);
+    margin-bottom: 5px;
+    font-size: 28px;
+}
+.header p {
+    color: var(--main-green);
+    font-size: 16px;
+}
+
+/* تنسيق الأزرار */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border: none;
+    text-align: center;
+}
+.btn-primary {
+    background-color: var(--main-blue);
+    color: white;
+}
+.btn-primary:hover {
+    background-color: #388ac4;
+}
+
+/* تنسيق الحقول */
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+.form-group input[type="text"], 
+.form-group input[type="number"], 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* تنسيقات الصفحة الرئيسية */
+.main-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px; 
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+.grid-item {
+    /* نفس التنسيقات من قبل */
+}
+/* ... (أكمل التنسيقات المذكورة سابقاً لـ grid-item, item-active, item-inactive) ... */

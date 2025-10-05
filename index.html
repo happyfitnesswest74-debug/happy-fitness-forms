@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الرشاقة السعيدة - نظام الفحوصات</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* إضافة تنسيقات Grid Item الخاصة هنا أو نقلها لـ style.css */
+        .main-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px; 
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        .grid-item {
+            background-color: #f7f7f7;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            width: 250px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            position: relative;
+        }
+        .grid-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .grid-item i {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+        .item-active {
+            border-bottom: 5px solid var(--main-green);
+        }
+        .item-active i {
+            color: var(--main-blue);
+        }
+        .item-inactive {
+            opacity: 0.6;
+            cursor: not-allowed;
+            border-bottom: 5px solid #cccccc;
+        }
+        .inactive-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #f0ad4e;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+             <img src="logo.png" alt="Happy Fitness Logo"> 
+            <h1>الرشاقة السعيدة</h1>
+            <p>نظام تسجيل الفحوصات</p>
+        </div>
+
+        <div class="main-grid">
+            
+            <a href="checkup.html" class="grid-item item-active">
+                <i class="fas fa-file-signature"></i>
+                <h3>تسجيل فحص جديد</h3>
+            </a>
+
+            <div class="grid-item item-inactive">
+                <span class="inactive-badge">قريباً</span>
+                <i class="fas fa-chart-line"></i>
+                <h3>تقارير وإحصائيات</h3>
+            </div>
+            
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
