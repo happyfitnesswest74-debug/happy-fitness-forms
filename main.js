@@ -1,7 +1,7 @@
 // main.js
 
 // **هام: استبدل هذا المتغير برابط Web App URL الذي حصلت عليه من Apps Script.**
-const API_URL = "https://script.google.com/macros/s/AKfycbyZyu1gGZZ5j71-rDI8IsQNKumqtE1eIR5kANKzxp-shbL-twPS9yWJgbXC7qmXsp6bkg/exec"; 
+const API_URL = "https://script.google.com/macros/s/AKfycbyFhscw7zZrnRkwCnjAJyPMD_90X166HOd4pelZD8hEZGlXc6EoQPBfXbbz1DXFfc5zgA/exec"; 
 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('checkupForm');
